@@ -3,8 +3,27 @@ import ReactDOM from 'react-dom';
 import App from "./Routes/index";
 import "./App.css"
 import * as serviceWorker from './serviceWorker';
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import reducer from "./Reducers/index"
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+const defaultState = {
+    user: {},
+    tasksList: [{
+        id: 0,
+        name: "caminaaaar",
+        description: "solo deves mover las piernas",
+        creationDate: new Date(),
+        expirationDate: new Date() + 10
+    }]
+}
+
+const store = createStore(reducer, defaultState);
+
+ReactDOM.render(
+<Provider store={store}>
+        <App />
+</Provider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
