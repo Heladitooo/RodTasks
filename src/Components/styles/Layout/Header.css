@@ -1,10 +1,14 @@
 .header {
     font-size: 69%;
     display: flex;
-    width: 100vw;
     background-color: black;
     color: white;
     justify-content: space-between;
+}
+
+.header a {
+    text-decoration: none;
+    color: white;
 }
 
 .header-links {
@@ -16,14 +20,14 @@
     list-style: none;
 }
 
-.header-links li {
+.links__link {
     cursor: pointer;
     transition: .4s;
     padding-right: 10%;
     padding-left: 1%;
 }
 
-.header-links li:hover{
+.links__link:hover{
     transform: translateX(20px);
     background: #126b8f;
 }

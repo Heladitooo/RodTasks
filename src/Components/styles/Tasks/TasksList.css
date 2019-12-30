@@ -1,0 +1,31 @@
+.tasksList {
+    display: grid;
+    justify-items: center;
+    background: #cdcdcd;
+    gap: 20px;
+    width: 100%;
+    padding: 6% 0;
+    min-height: 52vh;
+}
+
+
+.tasksList-task {
+    background: #f2f2f2;
+    width: 91%;
+    height: 94px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.tasksList-task:hover{
+    transform: translateX(50px);
+    box-shadow: -7px 7px 0 #126b8f;
+}
+
+.tasksList-task__name {
+    margin: 0;
+    margin-left: 2%;
+    color: #126b8f;
+}

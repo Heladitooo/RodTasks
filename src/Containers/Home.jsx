@@ -12,15 +12,15 @@ class Home extends React.Component{
                     <div className="hero-task">
                         <h4 className="hero-task__name">Tareas cerca de expirar:</h4>
                         
-                        <div className="task-tasksList">
-                            <div className="tasksList-task">
-                                <h5 className="tasksList-task__text">Tender cama</h5>
+                        <div className="task-tasksListHome">
+                            <div className="tasksListHome-task">
+                                <h5 className="tasksListHome-task__text">Tender cama</h5>
                             </div>
-                            <div className="tasksList-task">
-                                <h5 className="tasksList-task__text">Tender cama</h5>
+                            <div className="tasksListHome-task">
+                                <h5 className="tasksListHome-task__text">Tender cama</h5>
                             </div>
-                            <div className="tasksList-task">
-                                <h5 className="tasksList-task__text">Tender cama</h5>
+                            <div className="tasksListHome-task">
+                                <h5 className="tasksListHome-task__text">Tender cama</h5>
                             </div>
                         </div>
 

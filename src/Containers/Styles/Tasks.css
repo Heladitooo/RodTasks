@@ -1,0 +1,30 @@
+.tasks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tasks__text {
+    width: 28%;
+    
+    font-size: 233%;
+    margin-right: 8%;
+}
+
+.tasks-tasksList {
+    margin: 5% 0;
+    padding-bottom: 5%;
+    min-height: 79vh;
+    background: #f2f2f2;
+    width: 49vw;
+    font-size: 154%;
+    display: grid;
+    text-align: center;
+    box-shadow: 15px 15px 0px black;
+    transition: .4s;
+}
+
+.tasks-tasksList:hover {
+    transform: translateX(-10px);
+    box-shadow: 30px 30px 0px black;
+}
