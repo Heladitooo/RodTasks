@@ -1,0 +1,36 @@
+.header {
+    font-size: 69%;
+    display: flex;
+    width: 100vw;
+    background-color: black;
+    color: white;
+    justify-content: space-between;
+}
+
+.header-links {
+    display: flex;
+    justify-content: space-around;
+    width: 51%;
+    font-size: 156%;
+    margin-right: 2%;
+    list-style: none;
+}
+
+.header-links li {
+    cursor: pointer;
+    transition: .4s;
+    padding-right: 10%;
+    padding-left: 1%;
+}
+
+.header-links li:hover{
+    transform: translateX(20px);
+    background: #126b8f;
+}
+
+.header__tittle {
+    margin-left: .5%;
+    transition: .4s;
+    cursor: pointer;
+}
+
