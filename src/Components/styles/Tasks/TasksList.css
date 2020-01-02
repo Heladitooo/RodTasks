@@ -8,6 +8,9 @@
     min-height: 52vh;
 }
 
+.tasksList a {
+    text-decoration: none;
+}
 
 .tasksList-task {
     background: #f2f2f2;
@@ -26,6 +29,6 @@
 
 .tasksList-task__name {
     margin: 0;
-    margin-left: 2%;
+    margin-left: 10%;
     color: #126b8f;
 }

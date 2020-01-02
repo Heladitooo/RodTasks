@@ -1,0 +1,83 @@
+.TaskInformation__container {
+    display: grid;
+    min-height: 80vh;
+    grid-template-columns: 52% 28%;
+    justify-items: center;
+    margin: 3% 0;
+    justify-content: center;
+}
+
+.TaskDetails {
+    font-size: 200%;
+    margin-right: 8%;
+}
+
+.TaskPanel {
+    width: 100%;
+    display: flex;
+    border-left: 4px solid #126b8f;
+    flex-direction: column;
+    align-items: center;
+}
+
+.TaskPanel__completeButton {
+    margin-left: 25%;
+    border: none;
+    background: #91ff00;
+    font-size: 165%;
+    height: 72px;
+    width: 102%;
+    outline: none;
+    box-shadow: 4px 4px 1px #407128;
+    transition: .4s;
+}
+
+.TaskDetails-container {
+    display: flex;
+    width: 149%;
+    align-items: baseline;
+}
+
+.TaskDetails-container h6 {
+    color: #e65656;
+    margin-left: 2%;
+    
+}
+
+.TaskPanel__completeButton:hover {
+    transform: translateX(-10px);
+    cursor: pointer;
+}
+
+.TaskPanel-functions {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8%;
+    border-left: 2px solid #636363;
+    color: #636363;
+    width: 100%;
+    margin-left: 25%;
+    font-size: 161%;
+}
+
+.TaskPanel-functions p {
+    transition: .4s;
+    cursor: pointer;
+    
+}
+
+.TaskPanel-functions__delete {
+    margin: 4% 0 0 3%;
+}
+
+.TaskPanel-functions__delete:hover {
+    color: red;
+}
+
+.TaskPanel-functions__edit {
+    margin: 8% 0 4% 3%;
+}
+
+.TaskPanel-functions__edit:hover {
+    color: #126b8f;
+}

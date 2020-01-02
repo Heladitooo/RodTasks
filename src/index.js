@@ -5,17 +5,11 @@ import "./App.css"
 import * as serviceWorker from './serviceWorker';
 import { Provider } from "react-redux";
 import { createStore } from "redux";
-import reducer from "./Reducers/index"
+import reducer from "./Reducers/index";
 
 const defaultState = {
     user: {},
-    tasksList: [{
-        id: 0,
-        name: "caminaaaar",
-        description: "solo deves mover las piernas",
-        creationDate: new Date(),
-        expirationDate: new Date() + 10
-    }]
+    tasksList: []
 }
 
 const store = createStore(reducer, defaultState);
