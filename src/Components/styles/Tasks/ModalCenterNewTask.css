@@ -1,0 +1,42 @@
+.form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+}
+
+.form-data {
+    font-size: 174%;
+}
+
+.form-data div {
+    margin: 10% 0px;
+}
+
+.form-data__text{
+    margin: 0;
+}
+
+.form-data__name , .form-data__description {
+    border: 0;
+    width: 107%;
+    font-size: 84%;
+    height: 31px;
+    padding-left: 6%;
+    outline: none;
+    transition: .4s;
+}
+
+.form-data__name:hover , .form-data__description:hover{
+    transform: translateX(10px);
+    box-shadow: -4px 4px 0 #126b8f;
+}
+
+.form-data__description {
+    max-width: 107%;
+    height: 100%;
+    resize: none;
+    
+}
+

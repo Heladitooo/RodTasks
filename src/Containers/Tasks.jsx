@@ -17,7 +17,18 @@ class Tasks extends React.Component {
             form: {
                 name: "",
                 description: "",
-                expirationDate: ""
+                
+                expirationDate: {
+                    text: "",
+                    day: "",
+                    month: "",
+                    year: "",
+                    time: {
+                        minutes: "",
+                        hours: "",
+                        text: ""
+                    }
+                }
             }
         }
     }
@@ -36,21 +47,54 @@ class Tasks extends React.Component {
             lengthTasks: this.state.lengthTasks+1,
             showNewModal: false,
         })
-        
         this.props.newTask({
             id: this.state.lengthTasks,
             name: this.state.form.name,
             description: this.state.form.description,
-            creationDate: new Date(),
+            creationDate: {
+                text: `${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}`,
+                day: new Date().getDate(),
+                month: new Date().getMonth(),
+                year: new Date().getFullYear(),
+                time: {
+                    minutes: new Date().getMinutes(),
+                    hours: new Date().getHours(),
+                    text: `${new Date().getHours()}:${new Date().getMinutes()}`
+                }
+            },
             expirationDate: this.state.form.expirationDate
         })
     }
 
-    handleOnChangeDate(e) {
+    handleOnChangeDate = (e) => {
         this.setState({
             form: {
                 ...this.state.form,
-                expirationDate: e.target.value
+                
+                expirationDate: {
+                    ...this.state.form.expirationDate,
+                    day: e.date(),
+                    month: e.month(),
+                    year: e.year(),
+                    text: `${e.date()}/${e.month()}/${e.year()}`,
+                }
+            }
+        })
+    }
+
+    handleOnChangeTime = (e) => {
+        this.setState({
+            form: {
+                ...this.state.form,
+                expirationDate: {
+                    ...this.state.form.expirationDate,
+                    time: {
+                        ...this.state.form.expirationDate.time,
+                        hours: e.hour(),
+                        minutes: e.minute(),
+                        text: `${e.hour()}:${e.minute()}`
+                    },
+                }
             }
         })
     }
@@ -84,7 +128,8 @@ class Tasks extends React.Component {
                         handleOnChange={this.handleOnChange}
                         handleNewTask={this.handleNewTask} 
                         handleOnChangeDate={this.handleOnChangeDate}
-                        formDate={this.state.form.expirationDate}/>
+                        formDate={this.state.form.expirationDate}
+                        handleOnChangeTime={this.handleOnChangeTime} />
                 ,document.getElementById("modal"))}
                
             </section>

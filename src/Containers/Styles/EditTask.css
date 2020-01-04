@@ -34,13 +34,15 @@
 
 .TaskDetails-container {
     display: flex;
-    width: 149%;
-    align-items: baseline;
+    width: 77%;
+    font-size: 190%;
+    margin-top: 8%;
+    flex-direction: column;
 }
 
 .TaskDetails-container h6 {
     color: #e65656;
-    margin-left: 2%;
+    margin: 0;
     
 }
 
