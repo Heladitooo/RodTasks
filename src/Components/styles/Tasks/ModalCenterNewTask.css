@@ -14,6 +14,37 @@
     margin: 10% 0px;
 }
 
+.form__closeButton {
+    margin-left: 226%;
+    color: #cacaca;
+    transition: .4s;
+    cursor: pointer;
+}
+
+.form__closeButton:hover {
+    color: red;
+    
+}
+
+.form-data div button {
+    border: none;
+    background: #126b8f;
+    font-size: 126%;
+    height: 43px;
+    width: 114%;
+    color: #f2f2f2;
+    outline: none;
+    transition: .4s;
+    justify-self: flex-end;
+    box-shadow: 4px 4px #f2f2f2;
+}
+
+.form-data div button:hover {
+    box-shadow: 8px 8px #f2f2f2;
+    cursor: pointer;
+    transform: translateX(10px);
+}
+
 .form-data__text{
     margin: 0;
 }

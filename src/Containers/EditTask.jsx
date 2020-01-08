@@ -1,9 +1,8 @@
-/* eslint eqeqeq: 0 */
 
 import React from "react";
 import { connect } from "react-redux";
 import "./Styles/EditTask.css"
-
+/* eslint eqeqeq: 0 */
 class EditTask extends React.Component {
     constructor(props){
         super(props);
@@ -14,85 +13,86 @@ class EditTask extends React.Component {
             time: {
                 declarate: false,
                 seconds: 59 - new Date().getSeconds(),
-                minutes:0,
-                hours: 0
+                minutes: "",
+                hours: ""
             }
         }
-        this.declarateMinMax()
+        
     }
 
-    componentDidMount(){
+    /*
+    componentWillMount(){
         const selft = this;
-        console.log(this.filterTask[0].expirationDate.time.minutes < new Date().getMinutes())
-        if (this.filterTask[0].expirationDate.time.minutes < new Date().getMinutes()) {
-            this.setState({
-                time: {
-                    ...this.state.time,
-                    minutes: selft.filterTask[0].expirationDate.time.minutes + 59 - new Date().getMinutes()
-                }
-            })
-        } else {
-            this.setState({
-                time: {
-                    ...this.state.time,
-                    minutes: selft.filterTask[0].expirationDate.time.minutes - new Date().getMinutes()
-                }
-            })
+        function conditionalMinute(){
+            if (selft.filterTask[0].expirationDate.time.minutes < new Date().getMinutes()) {
+                selft.setState({
+                    time: {
+                        ...selft.state.time,
+                        minutes: selft.filterTask[0].expirationDate.time.minutes + 59 - new Date().getMinutes()
+                    }
+                })
+                selft.declarateMinMax()
+            } else {
+                selft.setState({
+                    time: {
+                        ...selft.state.time,
+                        minutes: selft.filterTask[0].expirationDate.time.minutes - new Date().getMinutes()
+                    }
+                })
+                selft.declarateMinMax()
+            }
         }
-
-        if (this.filterTask[0].expirationDate.time.hours < new Date().getHours()) {
-            this.setState({
-                time: {
-                    ...this.state.time,
-                    hours: this.filterTask[0].expirationDate.time.hours + 24 - new Date().getHours()
-                }
-            })
-        } else {
-            this.setState({
-                time: {
-                    ...this.state.time,
-                    hours: this.filterTask[0].expirationDate.time.hours - new Date().getHours()
-                }
-            })
-        }
+            if (selft.filterTask[0].expirationDate.time.hours < new Date().getHours()) {
+                selft.setState({
+                    time: {
+                        ...selft.state.time,
+                        hours: selft.filterTask[0].expirationDate.time.hours + 24 - new Date().getHours()
+                    }
+                })
+                conditionalMinute()
+            } else {
+                selft.setState({
+                    time: {
+                        ...selft.state.time,
+                        hours: selft.filterTask[0].expirationDate.time.hours - new Date().getHours()
+                    }
+                })
+                conditionalMinute()
+            }        
     }
 
     declarateMinMax(){
         let selft = this;
+        setInterval(() => {
+            if (selft.state.time.seconds > 0) {
+                selft.setState({
+                    time: {
+                        ...selft.state.time,
+                        seconds: selft.state.time.seconds - 1
+                    }
+                })
 
-        
-        
-            setInterval(() => {
-                if (selft.state.time.seconds > 0) {
-                    selft.setState({
-                        time: {
-                            ...selft.state.time,
-                            seconds: selft.state.time.seconds - 1
-                        }
-                    })
-
-                } else {
-                    selft.setState({
-                        time: {
-                            ...selft.state.time,
-                            seconds: 59,
-                            minutes: selft.state.time.minutes - 1
-                        }
-                    })
-                }
-                if (selft.state.time.minutes < 0) {
-                    selft.setState({
-                        time: {
-                            ...selft.state.time,
-                            minutes: 59,
-                            hours: selft.state.time.hours - 1
-                        }
-                    })
-                }
-            }, 1000)
-        
+            } else {
+                 selft.setState({
+                    time: {
+                        ...selft.state.time,
+                        seconds: 59,                            
+                        minutes: selft.state.time.minutes - 1
+                   }
+                })
+            }
+            if (selft.state.time.minutes < 0) {
+                selft.setState({
+                      time: {
+                        ...selft.state.time,
+                        minutes: 59,
+                        hours: selft.state.time.hours - 1
+                       }
+                })
+            }
+        }, 1000)    
     }
-
+*/
     render(){  
         return(
             <section className="TaskInformation__container">
@@ -110,13 +110,13 @@ class EditTask extends React.Component {
                     </div>
                     <div className="TaskDetails-container">
                         <h6>
-                            vence: {this.filterTask[0].expirationDate.text} {this.filterTask[0].expirationDate.time.text}
+                            vence: {this.filterTask[0].expirationDate.text} {this.filterTask[0].expirationDate.textHour} 
                         </h6>
                         <h6>
-                            se creo: {this.filterTask[0].creationDate.text} {this.filterTask[0].creationDate.time.text}
+                            se creo: {this.filterTask[0].creationDate.text} {this.filterTask[0].creationDate.textHour} 
                         </h6>    
                         <h6>
-                            quedan: {this.state.time.hours}:{this.state.time.minutes}:{this.state.time.seconds}
+                            quedan:
                         </h6>
                     </div>
                 </section>

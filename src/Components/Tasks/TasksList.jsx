@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/Tasks/TasksList.css"
+import "../styles/Tasks/TasksList.css";
+import { connect } from "react-redux";
 
 class TasksList extends React.Component {
     render(){
         return(
             <section className="tasksList">
                 
-                {this.props.data.length > 0 ? this.props.data.map((task) => {  
+                {this.props.tasksList.length > 0 ? this.props.tasksList.map((task) => {  
                     return (
                         <Link to={`/tasks/${task.id}`} key={task.id} className="tasksList-task">
                             <div  >
@@ -22,4 +23,10 @@ class TasksList extends React.Component {
     }
 }
 
-export default TasksList;
+const mapStateToProps = (data) => {
+    return{
+        tasksList: data.tasksList
+    }
+}
+
+export default connect(mapStateToProps,null)(TasksList);
